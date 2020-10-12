@@ -8,13 +8,28 @@
 </head>
 
 <body>
+  <div id="app">
+    <p>中文<input type="text" v-model="C_val"></p>
+    <p>拼音<input type="text" :value="P_value"></p>
+  </div>
 
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
   <script src="./pingyin.js"></script>
 
   <script>
-
-
-
+    new Vue({
+      el: '#app',
+      data: {
+        C_val: ''
+      },
+      computed: {
+        P_value() {
+          if (!this.C_val) return ''
+          var P_value = C2Pin.fullChar(this.C_val)
+          return C2Pin.fullChar(this.C_val)
+        }
+      },
+    })
   </script>
 </body>
 
