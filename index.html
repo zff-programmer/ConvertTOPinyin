@@ -5,12 +5,100 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    a {
+      text-decoration: none;
+      color: #333;
+    }
+
+    a:hover,
+    a:link,
+    a:visited,
+    a:active {
+      text-decoration: none;
+    }
+
+    input {
+      outline: none;
+    }
+
+    html,
+    body {
+      height: 100%;
+    }
+
+    body {
+      background-image: radial-gradient(879px at 10.4% 22.3%, rgb(255, 235, 238) 0%, rgb(186, 190, 245) 93.6%);
+    }
+
+    #app {
+      margin: 0 auto;
+      padding-top: 300px;
+      width: 40%;
+    }
+
+    #app .input-item {
+      height: 60px;
+      line-height: 40px;
+    }
+
+    .input-item label {
+      color: rgb(51, 102, 255);
+      width: 50px;
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    #app input {
+      height: 40px;
+      text-align: center;
+      width: calc(100% - 70px);
+      background-color: transparent;
+      border: 2px solid rgba(255, 243, 122, .8);
+      border-radius: 20px;
+      color: rgb(51, 102, 255);
+      font-size: 22px;
+      margin-left: 20px;
+      transition: .2s all;
+    }
+
+    #app input:focus {
+      border: 2px solid rgb(57, 255, 186);
+    }
+
+    .link {
+      text-align: center;
+    }
+
+    .link a {
+      text-decoration: none;
+      color: #55068a;
+    }
+  </style>
 </head>
 
 <body>
   <div id="app">
-    <p>中文<input type="text" v-model="C_val"></p>
-    <p>拼音<input type="text" :value="P_value"></p>
+    <div class="input-item">
+      <label for="C_val">中文</label>
+      <input type="text" v-model="C_val" id="C_val">
+    </div>
+    <div class="input-item">
+      <label for="P_value">拼音</label>
+      <input type="text" :value="P_value" id="P_value">
+    </div>
+    <div class="link">
+      <a
+        href="https://qszone.com/blog/#/admin/list/edit?name=%E4%B8%AD%E6%96%87%E8%BD%AC%E6%8B%BC%E9%9F%B3&path=db%2F_post%2Flist%2F%E4%B8%AD%E6%96%87%E8%BD%AC%E6%8B%BC%E9%9F%B3.md&category=JavaScript&description=%E4%B8%AD%E6%96%87%E8%BD%AC%E6%8B%BC%E9%9F%B3&isRecommend=true&author=%E5%BC%A0%E4%BC%A0%E9%BE%99&cover=&date=2020-10-13T11%3A51%3A05.271Z">中文转拼音</a>
+    </div>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/vue"></script>
